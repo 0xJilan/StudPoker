@@ -1,0 +1,2 @@
+# StudPoker
+Javacript StudPoker Algorithm

@@ -1,20 +1,24 @@
 import { suits, values } from "./lib/cards.js";
 import {
   generateDeck,
-  getNineCardsFromADeck,
-  dispatchCardsBetweenPlayersAndTable,
+  getTenCardsFromADeck,
+  dispatchCardsBetweenPlayers,
 } from "./lib/deck.js";
 
 console.log("Welcome aboard fren !");
-console.log("let's shuffle the cards..");
 
 const newDeck = generateDeck(suits, values);
-const nineRandomCards = getNineCardsFromADeck(newDeck);
+console.log("As you can see, the deck of card is new and clean ! ");
+console.log(newDeck);
 
+console.log("Now, let's shuffle and distribute the cards..");
+const TenRandomCards = getTenCardsFromADeck(newDeck);
+console.log("the 10 random cards are : ", TenRandomCards);
+const displatchedCards = dispatchCardsBetweenPlayers(TenRandomCards);
 console.log("...aaaaaaaannd let's see !");
-console.log(nineRandomCards);
-
-const displatchedCards = dispatchCardsBetweenPlayersAndTable(nineRandomCards);
 console.log("Your cards : ", displatchedCards.playerDeck);
 console.log("Bank cards : ", displatchedCards.bankDeck);
-console.log("Table cards : ", displatchedCards.commonDeck);
+
+// add a console script who wait after user action/decision
+// Add a way to bet moar (relance) or giveup.
+// hide the 4th first cards of the bank

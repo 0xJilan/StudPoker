@@ -1,26 +1,11 @@
-import { isSameSuits, generateDeck } from "./lib/generateDeck.js";
-import { suits, values } from "./lib/cards.js";
+import { generateDeck, getNineCardsFromADeck } from "./lib/generateDeck.js";
+import { suits, values, isSameSuits } from "./lib/cards.js";
 
 console.log("Welcome aboard fren !");
-
 console.log("let's shuffle the cards..");
 
-console.log("isSameSuits between  ♣ and ♣ : ", isSameSuits("♦", "♣"));
-
 const newDeck = generateDeck(suits, values);
-console.log("newDeck");
+const nineRandomCards = getNineCardsFromADeck(newDeck);
 
-console.log(newDeck.length);
-{
-  /*
-Chaque carte est a classé entre une valeur de 2 a 14
-Value = 
-2=2; 3=3; 4=4; 5=5; 6=6; 7=7; 8=8; 9=9; 10=10; J=11; Q=12; K=13; A=14
-Chaque carte peut etre à la fois Club (♣), Diamond (♦), Heart (♥) and Spade (♠).
-
-
-
-
-
-  */
-}
+console.log("...aaaaaaaannd let's see !");
+console.log(nineRandomCards);

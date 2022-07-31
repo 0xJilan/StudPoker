@@ -1,9 +1,10 @@
 {
-    "name": "StudPoker",
+    "name": "studpoker",
     "version": "0.0.1",
     "private": false,
     "scripts": {
       "start": "node index.js"
-    }
+    },
+    "type": "module"
 
 }

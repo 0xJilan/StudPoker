@@ -1,7 +1,16 @@
+import { isSameSuits, generateDeck } from "./lib/generateDeck.js";
+import { suits, values } from "./lib/cards.js";
+
 console.log("Welcome aboard fren !");
 
 console.log("let's shuffle the cards..");
 
+console.log("isSameSuits between  ♣ and ♣ : ", isSameSuits("♦", "♣"));
+
+const newDeck = generateDeck(suits, values);
+console.log("newDeck");
+
+console.log(newDeck.length);
 {
   /*
 Chaque carte est a classé entre une valeur de 2 a 14
@@ -11,5 +20,7 @@ Chaque carte peut etre à la fois Club (♣), Diamond (♦), Heart (♥) and Spa
 
 
 
-*/
+
+
+  */
 }

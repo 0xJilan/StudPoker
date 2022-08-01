@@ -8,12 +8,8 @@ import {
   hideBankDeck,
   sortDeckByValuesAndSuits,
 } from "./lib/deck.js";
+import { isFlush, isStraight } from "./lib/ranking.js";
 
-let amountBet = 1;
-console.log("Welcome aboard fren !");
-console.log(`You choose to bet ${amountBet}ETH`);
-console.log("Now I'm going to shuffle the cards and deal them !");
-console.log("May the force be with you...");
 const newDeck = generateDeck(suits, values);
 const deckShuffled = shuffleDeck(newDeck);
 const tenCards = getTenCardsFromADeck(deckShuffled);
@@ -24,9 +20,9 @@ const playerDeckReadable = improveCardsReadability(playerDeck, values, suits);
 const hiddenBankDeck = hideBankDeck(bankDeckReadable);
 console.log("Bank deck :", hiddenBankDeck);
 console.log("Player deck :", playerDeckReadable);
-console.log(`You choose to bet moar to see the bank cards...`);
 console.log("Bank deck :", bankDeckReadable);
-console.log(`Analyse of PlayerDeck...`);
 const { sortedValues, sortedSuits } = sortDeckByValuesAndSuits(playerDeck);
 console.log("player deck sorted by values :", sortedValues);
 console.log("player deck sorted by suits :", sortedSuits);
+console.log("is Flush ? : ", isFlush(sortedSuits));
+console.log("is Straight ? : ", isStraight(sortedValues));

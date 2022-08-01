@@ -1,10 +1,10 @@
 import inquirer from "inquirer";
-import { suits, values } from "./lib/cards.js";
+import { suits, values, dispatchCardsBetweenPlayers } from "./lib/cards.js";
 import {
   generateDeck,
   getTenCardsFromADeck,
-  dispatchCardsBetweenPlayers,
   hideBankDeck,
+  sortDeckBy,
 } from "./lib/deck.js";
 
 console.log("Welcome aboard fren !");
@@ -55,10 +55,19 @@ inquirer
           );
           console.log("the dealer turns over the bank's cards...");
           console.log(displatchedCards.bankDeck);
+          console.log(
+            "bank deck sorted by value : ",
+            sortDeckBy(displatchedCards.bankDeck, "value")
+          );
+          console.log(
+            "bank deck sorted by suits : ",
+            sortDeckBy(displatchedCards.bankDeck, "suits")
+          );
 
           // Determiner Si banque est qualifié (As + K ou plus..)
 
           // Determiner quel est la meilleur combinaison dans un deck de 5 carte
+          // Sort cards
 
           // Determiner qui gagne entre user et banque
         }

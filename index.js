@@ -8,7 +8,7 @@ import {
   hideBankDeck,
   sortDeckByValuesAndSuits,
 } from "./lib/deck.js";
-import { isFlush, isStraight } from "./lib/ranking.js";
+import { isFlush, isStraight, getDuplicateValues } from "./lib/ranking.js";
 
 const newDeck = generateDeck(suits, values);
 const deckShuffled = shuffleDeck(newDeck);
@@ -26,3 +26,4 @@ console.log("player deck sorted by values :", sortedValues);
 console.log("player deck sorted by suits :", sortedSuits);
 console.log("is Flush ? : ", isFlush(sortedSuits));
 console.log("is Straight ? : ", isStraight(sortedValues));
+console.log("get duplicates values  : ", getDuplicateValues(sortedValues));

@@ -31,6 +31,8 @@ const bankDeckSorted = sortDeckByValuesAndSuits(bankDeck);
 console.log("ranking of player deck:", getRankingOfDeck(playerDeckSorted));
 console.log("ranking of bank deck:", getRankingOfDeck(bankDeckSorted));
 
-//handle case of Royal Flush
-//handle case of AK
-// Handle case of 'Who win' between same result; (better ranking)
+// TODO: Handle case of Royal Flush
+// TODO: Handle case of AK
+// TODO: Handle case of 'Who win' between same result; (better ranking)
+// TODO: Handle comparaison of two games
+// TODO: Handle qualification of the bank

@@ -32,7 +32,7 @@ console.log("ranking of player deck:", getRankingOfDeck(playerDeckSorted));
 console.log("ranking of bank deck:", getRankingOfDeck(bankDeckSorted));
 
 // TODO: Handle case of Royal Flush
-// TODO: Handle case of AK
+
 // TODO: Handle case of 'Who win' between same result; (better ranking)
 // TODO: Handle comparaison of two games
-// TODO: Handle qualification of the bank
+// TODO: Add a 500 party simulator to know who wins between bank and player

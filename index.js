@@ -14,11 +14,9 @@ console.log("Hey Fren, Take seat and bet 1ETH");
 const newDeck = generateDeck(suits, values);
 const deckShuffled = shuffleDeck(newDeck);
 const tenCards = getTenCardsFromADeck(deckShuffled);
+
 const distributedCards = distributeCards(tenCards);
 const { playerDeck, bankDeck } = distributedCards;
-// const playerDeck = ["DC", "EC", "FH", "GH", "HD"] =====> exemple of a given player deck
-// const bankDeck = ["LS", "JC", "AD", "KH", "MS"] =====> exemple of a given bank deck
-
 const bankDeckReadable = improveCardsReadability(bankDeck, values, suits);
 const playerDeckReadable = improveCardsReadability(playerDeck, values, suits);
 const hiddenBankDeck = hideBankDeck(bankDeckReadable);
@@ -27,11 +25,8 @@ console.log("Player deck :", playerDeckReadable);
 console.log("Bank deck :", bankDeckReadable);
 const playerDeckSorted = sortDeckByValuesAndSuits(playerDeck);
 const bankDeckSorted = sortDeckByValuesAndSuits(bankDeck);
-
 console.log("ranking of player deck:", getRankingOfDeck(playerDeckSorted));
 console.log("ranking of bank deck:", getRankingOfDeck(bankDeckSorted));
-
-// TODO: Handle case of Royal Flush
 
 // TODO: Handle case of 'Who win' between same result; (better ranking)
 // TODO: Handle comparaison of two games

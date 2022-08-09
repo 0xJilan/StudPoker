@@ -18,9 +18,10 @@ import {
 let amountBet = 0.1;
 let BankReserve = 100;
 let PlayerReserve = 100;
-let partyToDo = 1000;
+let partyToDo = 7000;
+let partyDone = 0;
 
-const play = () => {
+const simulatePlay = () => {
   console.log(`Hey Fren, Take seat and bet ${amountBet}ETH`);
   const newDeck = generateDeck(suits, values);
   const deckShuffled = shuffleDeck(newDeck);
@@ -44,12 +45,13 @@ const play = () => {
   BankReserve += payout.bankPayout;
   PlayerReserve += payout.playerPayout;
 };
-let n = 0;
-while (n < partyToDo) {
-  play();
-  n++;
+while (partyDone < partyToDo && PlayerReserve >= 0 && BankReserve >= 0) {
+  simulatePlay();
+  partyDone++;
 }
 console.log("################## FINAL RESULT !!!!!!! #############");
-console.log({ BankReserve: BankReserve, PlayerReserve: PlayerReserve });
-
-// TODO: Add a 500 party simulator to know who wins between bank and player
+console.log({
+  partyDone: partyDone,
+  BankReserve: BankReserve,
+  PlayerReserve: PlayerReserve,
+});

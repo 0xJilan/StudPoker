@@ -14,7 +14,6 @@ console.log("Hey Fren, Take seat and bet 1ETH");
 const newDeck = generateDeck(suits, values);
 const deckShuffled = shuffleDeck(newDeck);
 const tenCards = getTenCardsFromADeck(deckShuffled);
-
 const distributedCards = distributeCards(tenCards);
 const { playerDeck, bankDeck } = distributedCards;
 const bankDeckReadable = improveCardsReadability(bankDeck, values, suits);
